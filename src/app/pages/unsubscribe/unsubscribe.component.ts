@@ -25,6 +25,7 @@ export class UnsubscribeComponent implements OnInit, OnDestroy {
         }),
         filter(value => value !== this.appService.IGNORE_VALUE),
         // switchMap(() => this.appService.observable2),
+        // mergeMap(() => this.appService.observable2), // it's collecting all previous calls and call them at once!
       ).subscribe(value => {
         console.log('UnsubscribeComponent: subscribe: ' + value);
       }, error => {
