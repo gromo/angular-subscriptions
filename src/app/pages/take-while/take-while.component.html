@@ -1,0 +1,13 @@
+<h2>takeWhile</h2>
+<ul>
+  <li>Triggers "complete" event for subscription.</li>
+</ul>
+<h3>Leaks</h3>
+<ul>
+  <li>subscription is alive until next value is triggered:
+    come to other page and trigger A or B - will see "TakeWhileComponent: tap" for first event
+  </li>
+  <li>unsubscribing not happening pipe cannot reach takeWhile step:
+    come to other page and keep triggering ignored value
+  </li>
+</ul>
